@@ -1,0 +1,40 @@
+ <div class="controls">
+        <h3>PLY Vertex Color Tester</h3>
+        
+        <div class="control-group">
+            <label>Point Size:</label>
+            <input type="range" id="pointSize" min="0.1" max="5" step="0.1" value="1">
+            <span id="pointSizeValue">1.0</span>
+        </div>
+        
+        <div class="control-group">
+            <label>Render Mode:</label>
+            <select id="renderMode">
+                <option value="points">Points</option>
+                <option value="mesh">Mesh</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label>Colors:</label>
+            <input type="checkbox" id="useVertexColors" checked>
+            <label for="useVertexColors" style="width: auto;">Use Vertex Colors</label>
+        </div>
+        
+        <div class="control-group">
+            <input type="file" id="fileInput" accept=".ply">
+            <button onclick="loadSamplePLY()">Load Sample PLY</button>
+        </div>
+        
+        <button onclick="generateColoredPoints()">Generate Test Points</button>
+        <button onclick="exportPLY()">Export as PLY</button>
+    </div>
+    
+    <div class="info">
+        <div><strong>Instructions:</strong></div>
+        <div>• Use mouse to orbit around the scene</div>
+        <div>• Load your own PLY files or generate test data</div>
+        <div>• Toggle between points and mesh rendering</div>
+        <div>• Adjust point size for better visibility</div>
+        <div id="modelInfo"></div>
+    </div>
